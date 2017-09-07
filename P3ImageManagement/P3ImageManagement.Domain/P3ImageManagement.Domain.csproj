@@ -40,6 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Checkbox.cs" />
+    <Compile Include="Models\Entity.cs" />
+    <Compile Include="Models\Field.cs" />
+    <Compile Include="Models\Select.cs" />
+    <Compile Include="Models\SubCategory.cs" />
+    <Compile Include="Models\Text.cs" />
+    <Compile Include="Models\TextArea.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
