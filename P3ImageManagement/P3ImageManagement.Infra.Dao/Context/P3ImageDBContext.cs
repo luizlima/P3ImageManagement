@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace P3ImageManagement.Infra.Dao.Context
 {
-    public class P3ImageDBContext : DbContext
+    public class P3ImageDBContext : DbContext, IDisposable
     {
         public P3ImageDBContext()
         {
@@ -41,6 +41,11 @@ namespace P3ImageManagement.Infra.Dao.Context
             modelBuilder.Configurations.Add(new TextAreaMap());
             
             base.OnModelCreating(modelBuilder);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
     }
 }

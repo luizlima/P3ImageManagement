@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3ImageManagement.Infra.Dao
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3ImageManagement.Domain", "P3ImageManagement.Domain\P3ImageManagement.Domain.csproj", "{5E8F6026-A8BC-4B1E-A712-423128E7B33C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3ImageManagement.Infra.IoC", "P3ImageManagement.Infra.IoC\P3ImageManagement.Infra.IoC.csproj", "{C47A1058-1D38-4BC7-B59C-2549161E4CEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3ImageManagement.Application", "P3ImageManagement.Application\P3ImageManagement.Application.csproj", "{7D18D855-55E1-4540-ABBA-B92286C08AFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{5E8F6026-A8BC-4B1E-A712-423128E7B33C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E8F6026-A8BC-4B1E-A712-423128E7B33C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E8F6026-A8BC-4B1E-A712-423128E7B33C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C47A1058-1D38-4BC7-B59C-2549161E4CEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C47A1058-1D38-4BC7-B59C-2549161E4CEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C47A1058-1D38-4BC7-B59C-2549161E4CEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C47A1058-1D38-4BC7-B59C-2549161E4CEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D18D855-55E1-4540-ABBA-B92286C08AFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D18D855-55E1-4540-ABBA-B92286C08AFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D18D855-55E1-4540-ABBA-B92286C08AFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D18D855-55E1-4540-ABBA-B92286C08AFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
