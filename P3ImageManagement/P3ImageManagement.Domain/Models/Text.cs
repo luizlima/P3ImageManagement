@@ -8,5 +8,6 @@ namespace P3ImageManagement.Domain.Models
 {
     public class Text : Field
     {
+        public string Value { get; set; }
     }
 }

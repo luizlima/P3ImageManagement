@@ -16,8 +16,10 @@ namespace P3ImageManagement.Domain.Models
             this.Category = category;
         }
 
-        public Category Category { get; set; }
+        public virtual List<Field> Fields { get; set; }
 
-        public List<Field> Fields { get; set; }
+        public int CategoryId { get; set; }
+
+        public virtual Category Category { get; set; }
     }
 }

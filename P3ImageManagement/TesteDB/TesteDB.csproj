@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{739FD184-106F-4635-9D0C-634B26AD2D44}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{0DDD5F6C-0CCB-48F9-A493-9C6BF7CBEC80}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>P3ImageManagement.Infra.Dao</RootNamespace>
-    <AssemblyName>P3ImageManagement.Infra.Dao</AssemblyName>
+    <RootNamespace>TesteDB</RootNamespace>
+    <AssemblyName>TesteDB</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,8 +44,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Entity.Design" />
-    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -53,30 +54,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Context\P3ImageDBContext.cs" />
-    <Compile Include="Mappings\CategoryMap.cs" />
-    <Compile Include="Mappings\TextAreaMap.cs" />
-    <Compile Include="Mappings\TextMap.cs" />
-    <Compile Include="Mappings\SelectMap.cs" />
-    <Compile Include="Mappings\CheckboxMap.cs" />
-    <Compile Include="Mappings\FieldMap.cs" />
-    <Compile Include="Mappings\SubCategoryMap.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\P3ImageManagement.Domain\P3ImageManagement.Domain.csproj">
-      <Project>{5e8f6026-a8bc-4b1e-a712-423128e7b33c}</Project>
-      <Name>P3ImageManagement.Domain</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config">
+    <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Config\" />
+    <ProjectReference Include="..\P3ImageManagement.Domain\P3ImageManagement.Domain.csproj">
+      <Project>{5E8F6026-A8BC-4B1E-A712-423128E7B33C}</Project>
+      <Name>P3ImageManagement.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\P3ImageManagement.Infra.Dao\P3ImageManagement.Infra.Dao.csproj">
+      <Project>{739fd184-106f-4635-9d0c-634b26ad2d44}</Project>
+      <Name>P3ImageManagement.Infra.Dao</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

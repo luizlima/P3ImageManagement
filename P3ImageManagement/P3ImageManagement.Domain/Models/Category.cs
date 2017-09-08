@@ -8,11 +8,18 @@ namespace P3ImageManagement.Domain.Models
 {
     public class Category : Entity
     {
+        public Category()
+        {
+
+        }
+
         public Category(int id, string description, string slug)
         {
             this.Id = id;
             this.Description = description;
             this.Slug = slug;
         }
+
+        public virtual List<SubCategory> SubCategories { get; set; }
     }
 }

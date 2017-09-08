@@ -8,5 +8,6 @@ namespace P3ImageManagement.Domain.Models
 {
     public class Checkbox : Field
     {
+        public string Values { get; set; }
     }
 }
