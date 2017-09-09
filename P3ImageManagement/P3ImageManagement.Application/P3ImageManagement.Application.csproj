@@ -41,8 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\ICategoryAppService.cs" />
+    <Compile Include="Interfaces\ISubCategoryAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CategoryAppService.cs" />
+    <Compile Include="Services\SubCategoryAppService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\P3ImageManagement.Domain\P3ImageManagement.Domain.csproj">

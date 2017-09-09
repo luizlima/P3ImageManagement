@@ -20,7 +20,9 @@ namespace P3ImageManagement.Infra.IoC
             container = new Container();
             container.Register<IUnitOfWork, UnitOfWork>();
             container.Register<IRepository<Category>, CategoryRepository>();
+            container.Register<IRepository<SubCategory>, SubCategoryRepository>();
             container.Register<ICategoryAppService, CategoryAppService>();
+            container.Register<ISubCategoryAppService, SubCategoryAppService>();
         }
 
         public static Ioc Instance
