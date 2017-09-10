@@ -12,6 +12,7 @@ namespace P3ImageManagement.Infra.Dao.Repository
     {
         public SubCategoryRepository(P3ImageDBContext context) : base(context)
         {
+            
         }
     }
 }

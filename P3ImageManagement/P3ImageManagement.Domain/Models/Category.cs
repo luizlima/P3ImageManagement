@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace P3ImageManagement.Domain.Models
 {
-    [Serializable]
     public class Category : Entity
     {
         public Category()

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using P3ImageManagement.Application.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,9 @@ namespace P3ImageManagement.Application.Interfaces
 {
     public interface ISubCategoryAppService
     {
-        void Add(P3ImageManagement.Domain.Models.SubCategory subCategory);
-        P3ImageManagement.Domain.Models.SubCategory GetById(int id);
+        void Add(SubCategoryViewModel subCategoryViewModel);
+        SubCategoryViewModel GetById(int id);
+        List<SubCategoryViewModel> GetAll();
+        void Remove(int id);
     }
 }
