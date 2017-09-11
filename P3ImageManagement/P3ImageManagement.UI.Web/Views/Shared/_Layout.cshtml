@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="P3ImageApp" >
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -18,10 +18,14 @@
                 </button>
                 @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse" style="width:600px;float:left">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
+                    <li><a href="/">Pública</a></li>
+                </ul>
+            </div>
+            <div class="navbar-collapse" style="float: right;padding-right: 0;">
+                <ul class="nav navbar-nav">
+                    <li><a href="#!private">Administrativa</a></li>
                 </ul>
             </div>
         </div>
@@ -30,7 +34,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - My Angular JS Application</p>
         </footer>
     </div>
 

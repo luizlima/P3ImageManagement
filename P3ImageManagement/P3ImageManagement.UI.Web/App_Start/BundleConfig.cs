@@ -18,7 +18,12 @@ namespace P3ImageManagement.UI.Web
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/Scripts/angular.js",
+                      "~/Scripts/angular-route.js",
+                      "~/App/app.module.js",
+                      "~/App/Controllers/private-area.js",
+                      "~/App/Controllers/public-area.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
