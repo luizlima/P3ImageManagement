@@ -10,7 +10,6 @@ namespace P3ImageManagement.Domain.Models
     {
         public SubCategory()
         {
-            this.Category = new Category();
             this.Fields = new List<Field>();
         }
 

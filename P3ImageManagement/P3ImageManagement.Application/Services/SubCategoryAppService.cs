@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 using P3ImageManagement.Domain.Models;
 using P3ImageManagement.Domain.Interfaces;
 using P3ImageManagement.Application.ViewModels;
+using P3ImageManagement.Application.Patterns.FieldPattern;
 
 namespace P3ImageManagement.Application.Services
 {
     public class SubCategoryAppService : ISubCategoryAppService
     {
-        private readonly IRepository<SubCategory> _subCategoryRepository;
+        private readonly ISubCategoryRepository _subCategoryRepository;
         private readonly ICategoryAppService _categoryAppService;
 
-        public SubCategoryAppService(IRepository<SubCategory> subCategoryRepository, ICategoryAppService categoryAppService)
+        public SubCategoryAppService(ISubCategoryRepository subCategoryRepository, ICategoryAppService categoryAppService)
         {
             _subCategoryRepository = subCategoryRepository;
             _categoryAppService = categoryAppService;
@@ -27,9 +28,15 @@ namespace P3ImageManagement.Application.Services
             subCategory.Description = subCategoryViewModel.Description;
             subCategory.Slug = subCategoryViewModel.Slug;
             subCategory.CategoryId = subCategoryViewModel.CategoryViewModel.Id;
+            FieldCreator creator = new FieldCreator();
+            foreach (var item in subCategoryViewModel.FieldsViewModel)
+            {
+                subCategory.Fields.Add(creator.FactoryMethod(item));
+            }
 
             _subCategoryRepository.Add(subCategory);
             _subCategoryRepository.SaveChanges();
+
             subCategoryViewModel.Id = subCategory.Id;
         }
 
@@ -43,9 +50,11 @@ namespace P3ImageManagement.Application.Services
                     Id = subCategory.Id,
                     Description = subCategory.Description,
                     Slug = subCategory.Slug,
-                    CategoryViewModel = _categoryAppService.GetById(subCategory.CategoryId)
+                    CategoryViewModel = _categoryAppService.GetById(subCategory.CategoryId),
+                    FieldsViewModel = ConvertToViewModels(subCategory.Fields)
                 });
             });
+            
             return subCategoriesViewModel;
         }
 
@@ -66,6 +75,34 @@ namespace P3ImageManagement.Application.Services
         {
             var subCategory = _subCategoryRepository.GetById(id);
             _subCategoryRepository.Remove(subCategory);
+        }
+
+        private List<FieldViewModel> ConvertToViewModels(List<Field> fields)
+        {
+            var fieldsViewModel = new List<FieldViewModel>();
+            FieldViewModelCreator creator = new FieldViewModelCreator();
+            foreach (var item in fields)
+            {
+                fieldsViewModel.Add(creator.FactoryMethod(item));
+            }
+
+            return fieldsViewModel;
+        }
+
+        public List<SubCategoryViewModel> GetByCategoryId(int categoryId)
+        {
+            var subCategories = _subCategoryRepository.GetByCategoryId(categoryId);
+            var subCategoriesViewModel = new List<SubCategoryViewModel>();
+            subCategories.ForEach(delegate (SubCategory subCategory) {
+                subCategoriesViewModel.Add(new SubCategoryViewModel()
+                {
+                    Id = subCategory.Id,
+                    Description = subCategory.Description,
+                    Slug = subCategory.Slug
+                });
+            });
+
+            return subCategoriesViewModel;
         }
     }
 }

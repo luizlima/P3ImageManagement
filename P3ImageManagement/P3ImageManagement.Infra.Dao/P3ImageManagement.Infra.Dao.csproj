@@ -52,7 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config\UnitOfWork.cs" />
     <Compile Include="Context\P3ImageDBContext.cs" />
     <Compile Include="Mappings\CategoryMap.cs" />
     <Compile Include="Mappings\TextAreaMap.cs" />

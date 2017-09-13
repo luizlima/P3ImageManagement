@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Interfaces\ICategoryAppService.cs" />
     <Compile Include="Interfaces\ISubCategoryAppService.cs" />
+    <Compile Include="Patterns\FieldPattern\FieldCreator.cs" />
+    <Compile Include="Patterns\FieldPattern\FieldViewModelCreator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CategoryAppService.cs" />
     <Compile Include="Services\SubCategoryAppService.cs" />
@@ -54,6 +56,10 @@
     <ProjectReference Include="..\P3ImageManagement.Domain\P3ImageManagement.Domain.csproj">
       <Project>{5E8F6026-A8BC-4B1E-A712-423128E7B33C}</Project>
       <Name>P3ImageManagement.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\P3ImageManagement.Infra.Dao\P3ImageManagement.Infra.Dao.csproj">
+      <Project>{739FD184-106F-4635-9D0C-634B26AD2D44}</Project>
+      <Name>P3ImageManagement.Infra.Dao</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

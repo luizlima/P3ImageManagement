@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3ImageManagement.Api", "P3ImageManagement.Api\P3ImageManagement.Api.csproj", "{388C0F95-9F3F-4E58-98D9-336216F31649}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3ImageManagement.Api.Tests", "P3ImageManagement.Api.Tests\P3ImageManagement.Api.Tests.csproj", "{14F6E3EA-FE6A-4993-88FC-B3424C1D6590}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3ImageManagement.Infra.Dao", "P3ImageManagement.Infra.Dao\P3ImageManagement.Infra.Dao.csproj", "{739FD184-106F-4635-9D0C-634B26AD2D44}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3ImageManagement.Domain", "P3ImageManagement.Domain\P3ImageManagement.Domain.csproj", "{5E8F6026-A8BC-4B1E-A712-423128E7B33C}"
@@ -15,7 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3ImageManagement.Infra.IoC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3ImageManagement.Application", "P3ImageManagement.Application\P3ImageManagement.Application.csproj", "{7D18D855-55E1-4540-ABBA-B92286C08AFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3ImageManagement.UI.Angular", "P3ImageManagement.UI.Angular\P3ImageManagement.UI.Angular.csproj", "{8B9491D4-7E17-4D3F-A0ED-F1E0F9521906}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3ImageManagement.UI.AngularJS", "P3ImageManagement.UI.AngularJS\P3ImageManagement.UI.AngularJS.csproj", "{667B3F2F-8A0E-45A6-A9F8-EAAFC3E802B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3ImageManagement.Application.Tests", "P3ImageManagement.Application.Tests\P3ImageManagement.Application.Tests.csproj", "{A819E946-5A87-491C-946A-87EE6DA9D590}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,14 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{388C0F95-9F3F-4E58-98D9-336216F31649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{388C0F95-9F3F-4E58-98D9-336216F31649}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{388C0F95-9F3F-4E58-98D9-336216F31649}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{388C0F95-9F3F-4E58-98D9-336216F31649}.Release|Any CPU.Build.0 = Release|Any CPU
-		{14F6E3EA-FE6A-4993-88FC-B3424C1D6590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{14F6E3EA-FE6A-4993-88FC-B3424C1D6590}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{14F6E3EA-FE6A-4993-88FC-B3424C1D6590}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{14F6E3EA-FE6A-4993-88FC-B3424C1D6590}.Release|Any CPU.Build.0 = Release|Any CPU
 		{739FD184-106F-4635-9D0C-634B26AD2D44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{739FD184-106F-4635-9D0C-634B26AD2D44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{739FD184-106F-4635-9D0C-634B26AD2D44}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,10 +37,14 @@ Global
 		{7D18D855-55E1-4540-ABBA-B92286C08AFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D18D855-55E1-4540-ABBA-B92286C08AFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D18D855-55E1-4540-ABBA-B92286C08AFE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8B9491D4-7E17-4D3F-A0ED-F1E0F9521906}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8B9491D4-7E17-4D3F-A0ED-F1E0F9521906}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8B9491D4-7E17-4D3F-A0ED-F1E0F9521906}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8B9491D4-7E17-4D3F-A0ED-F1E0F9521906}.Release|Any CPU.Build.0 = Release|Any CPU
+		{667B3F2F-8A0E-45A6-A9F8-EAAFC3E802B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{667B3F2F-8A0E-45A6-A9F8-EAAFC3E802B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{667B3F2F-8A0E-45A6-A9F8-EAAFC3E802B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{667B3F2F-8A0E-45A6-A9F8-EAAFC3E802B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A819E946-5A87-491C-946A-87EE6DA9D590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A819E946-5A87-491C-946A-87EE6DA9D590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A819E946-5A87-491C-946A-87EE6DA9D590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A819E946-5A87-491C-946A-87EE6DA9D590}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

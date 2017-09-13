@@ -1,0 +1,13 @@
+﻿<div ng-controller="PublicAreaController">
+    <div class="btn-group-vertical" role="group" aria-label="..." style="float:left" >
+        <div class="btn-group" role="group" ng-repeat="c in categories">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:100%;text-align:right">
+                {{c.slug}}
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li ng-repeat="s in c.subCategories"><a href="{{c.slug + '/' + s.slug}}">{{s.slug}}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

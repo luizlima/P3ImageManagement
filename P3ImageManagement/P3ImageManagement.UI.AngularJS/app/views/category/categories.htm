@@ -1,0 +1,32 @@
+﻿<div ng-controller="CategoryController">
+    <div class="panel panel-default">
+        <div class="panel-heading">Cadastrar categoria</div>
+        <div class="panel-body">
+            <label>Descrição:</label>
+            <input name="description" type="text" ng-model="Category.description" required>
+            <label>Slug:</label>
+            <input name="slug" type="text" ng-model="Category.slug" required>
+            <input name="salvar" type="button" ng-click="saveCategory()" value="Salvar" />
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Listar categorias</div>
+        <div class="panel-body">
+            <table class="table table-condensed" style="width:100%;">
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Slug</th>
+                    </tr>
+                </thead>
+                <tr ng-repeat="c in categories">
+                    <td>{{c.description}}</td>
+                    <td>{{c.slug}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    
+</div>

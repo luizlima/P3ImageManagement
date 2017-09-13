@@ -1,0 +1,91 @@
+﻿<div ng-controller="SubCategoryController">
+    <div class="panel panel-default">
+        <div class="panel-heading">Cadastrar SubCategoria</div>
+        <div class="panel-body">
+            <div><label>Descrição:</label></div>
+            <input name="description" type="text" ng-model="subCategory.description" required>
+            <div><label>Slug:</label></div>
+            <input name="slug" type="text" ng-model="subCategory.slug" required>
+            <div><label>Categoria</label></div>
+            <select ng-model="subCategory.category" ng-options="c.slug for c in categories"></select>
+            <div>
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">Campos</div>
+                    <div class="panel-body">
+                        <label>Ordem:</label>
+                        <input name="ordem" type="number" ng-model="field.order" required>
+                        <label>Descrição:</label>
+                        <input name="fieldDescription" type="text" ng-model="field.description" required>
+                        <label>Tipo:</label>
+                        <select ng-model="field.fieldType" ng-options="ft for ft in fieldTypes"></select>
+                        <label ng-if="field.fieldType == 'checkbox' || field.fieldType == 'select'">Valores</label>
+                        <input name="values" ng-model="field.values" type="text" placeholder="Valores separados por vírgula" ng-if="field.fieldType == 'checkbox' || field.fieldType == 'select'" style="width:100%" />
+                        <input name="saveFields" type="button" value="Adicionar" ng-click="addField(field.order,field.description,field.fieldType,field.values)" />
+                    </div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ordem</th>
+                                <th>descricao</th>
+                                <th>tipo</th>
+                                <th>valores</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="f in fields">
+                                <td>{{f.order}}</td>
+                                <td>{{f.description}}</td>
+                                <td>{{f.fieldType}}</td>
+                                <td>{{f.values}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <input name="salvar" type="button" ng-click="saveSubCategory()" value="Salvar" />
+            </div>
+        </div>
+    </div>
+   
+     <div class="panel panel-default">
+        <div class="panel-heading">Listar SubCategorias</div>
+        <div class="panel-body">
+            <table class="table table-condensed" style="width:100%;">
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Slug</th>
+                        <th>Categoria</th>
+                        <th>Campos</th>
+                    </tr>
+                </thead>
+                <tr ng-repeat="sc in subCategories">
+                    <td>{{sc.description}}</td>
+                    <td>{{sc.slug}}</td>
+                    <td>{{sc.categoryViewModel.slug}}</td>
+                    <td>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Ordem</th>
+                                    <th>Descrição</th>
+                                    <th>Tipo</th>
+                                    <th>Valores</th>
+                                </tr>
+                            </thead>
+                            <tr ng-repeat="f in sc.fieldsViewModel">
+                                <td>{{f.order}}</td>
+                                <td>{{f.description}}</td>
+                                <td>{{f.fieldType}}</td>
+                                <td>{{f.values}}</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

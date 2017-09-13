@@ -17,5 +17,22 @@ namespace P3ImageManagement.Application.ViewModels
         [Display(Name = "Descrição")]
         [Required]
         public string Description { get; set; }
+        [Display(Name = "Tipo")]
+        [Required]
+        public string FieldType { get; set; }
+        [Display(Name = "Valores")]
+        public string Values { get; set; }
+    }
+
+    public enum FieldType
+    {
+        [Display(Name = "Checkbox")]
+        Checkbox,
+        [Display(Name = "Select")]
+        Select,
+        [Display(Name = "Text")]
+        Text,
+        [Display(Name = "TextArea")]
+        TextArea
     }
 }

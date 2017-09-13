@@ -2,7 +2,6 @@
 using SimpleInjector;
 using P3ImageManagement.Infra.Dao.Repository;
 using P3ImageManagement.Domain.Interfaces;
-using P3ImageManagement.Infra.Dao.Config;
 using P3ImageManagement.Application.Interfaces;
 using System.Web.Mvc;
 using P3ImageManagement.Application.Services;
@@ -18,9 +17,8 @@ namespace P3ImageManagement.Infra.IoC
         protected Ioc()
         {
             container = new Container();
-            container.Register<IUnitOfWork, UnitOfWork>();
             container.Register<IRepository<Category>, CategoryRepository>();
-            container.Register<IRepository<SubCategory>, SubCategoryRepository>();
+            container.Register<ISubCategoryRepository, SubCategoryRepository>();
             container.Register<ICategoryAppService, CategoryAppService>();
             container.Register<ISubCategoryAppService, SubCategoryAppService>();
         }

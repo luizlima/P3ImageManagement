@@ -18,7 +18,7 @@ namespace P3ImageManagement.Infra.Dao.Mappings
 
             Property(x => x.Description).HasMaxLength(128).IsRequired();
             Property(x => x.Slug).HasMaxLength(256).IsRequired();
-
+            
             HasRequired(x => x.Category)
                 .WithMany(x => x.SubCategories)
                 .HasForeignKey(x => x.CategoryId);

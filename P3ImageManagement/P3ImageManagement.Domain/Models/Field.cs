@@ -5,6 +5,10 @@ namespace P3ImageManagement.Domain.Models
 {
     public abstract class Field
     {
+        public Field()
+        {
+            
+        }
         public int Id { get; set; }
 
         public int Order { get; set; }
