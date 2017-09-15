@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Context\P3ImageDBContext.cs" />
     <Compile Include="Mappings\CategoryMap.cs" />
+    <Compile Include="Mappings\P3RouteMap.cs" />
     <Compile Include="Mappings\TextAreaMap.cs" />
     <Compile Include="Mappings\TextMap.cs" />
     <Compile Include="Mappings\SelectMap.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Mappings\SubCategoryMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CategoryRepository.cs" />
+    <Compile Include="Repository\P3RouteRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="Repository\SubCategoryRepository.cs" />
   </ItemGroup>

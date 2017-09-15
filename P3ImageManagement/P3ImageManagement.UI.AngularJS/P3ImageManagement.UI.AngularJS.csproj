@@ -202,6 +202,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\P3RouteController.cs" />
     <Compile Include="Controllers\SubCategoryController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -218,6 +219,7 @@
     <Content Include="app\views\category\categories.htm" />
     <Content Include="app\views\private-area.htm" />
     <Content Include="app\views\public-area.htm" />
+    <Content Include="app\views\render-form.htm" />
     <Content Include="app\views\subCategory\subCategories.htm" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
@@ -1056,6 +1058,10 @@
     <ProjectReference Include="..\P3ImageManagement.Application\P3ImageManagement.Application.csproj">
       <Project>{7D18D855-55E1-4540-ABBA-B92286C08AFE}</Project>
       <Name>P3ImageManagement.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\P3ImageManagement.Domain\P3ImageManagement.Domain.csproj">
+      <Project>{5E8F6026-A8BC-4B1E-A712-423128E7B33C}</Project>
+      <Name>P3ImageManagement.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\P3ImageManagement.Infra.IoC\P3ImageManagement.Infra.IoC.csproj">
       <Project>{C47A1058-1D38-4BC7-B59C-2549161E4CEA}</Project>

@@ -13,7 +13,7 @@ namespace P3ImageManagement.Infra.Dao.Context
     {
         public P3ImageDBContext()
         {
-            Database.SetInitializer<P3ImageDBContext>(new CreateDatabaseIfNotExists<P3ImageDBContext>());
+            Database.SetInitializer<P3ImageDBContext>(new DropCreateDatabaseAlways<P3ImageDBContext>());
         }
 
         public DbSet<Category> Categories { get; set; }
@@ -30,6 +30,8 @@ namespace P3ImageManagement.Infra.Dao.Context
 
         public DbSet<TextArea> TextAreas { get; set; }
 
+        public DbSet<P3Route> P3Routes { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new CategoryMap());
@@ -38,6 +40,7 @@ namespace P3ImageManagement.Infra.Dao.Context
             modelBuilder.Configurations.Add(new SelectMap());
             modelBuilder.Configurations.Add(new TextMap());
             modelBuilder.Configurations.Add(new TextAreaMap());
+            modelBuilder.Configurations.Add(new P3RouteMap());
             
             base.OnModelCreating(modelBuilder);
         }

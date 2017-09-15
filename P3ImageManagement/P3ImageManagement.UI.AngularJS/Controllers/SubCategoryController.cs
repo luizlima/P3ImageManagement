@@ -22,7 +22,6 @@ namespace P3ImageManagement.UI.AngularJS.Controllers
         // GET: api/SubCategory
         public IEnumerable<SubCategoryViewModel> Get()
         {
-            _subCategoryAppService = Ioc.Instance.container.GetInstance<ISubCategoryAppService>();
             var subCategories = _subCategoryAppService.GetAll();
 
             return subCategories;
@@ -32,7 +31,6 @@ namespace P3ImageManagement.UI.AngularJS.Controllers
         [Route("api/subcategories/{categoryId}/category")]
         public IEnumerable<SubCategoryViewModel> GetByCategoryId(int categoryId)
         {
-            _subCategoryAppService = Ioc.Instance.container.GetInstance<ISubCategoryAppService>();
             var subCategories = _subCategoryAppService.GetByCategoryId(categoryId);
 
             return subCategories;

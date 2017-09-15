@@ -8,18 +8,21 @@ using P3ImageManagement.Domain.Models;
 using P3ImageManagement.Domain.Interfaces;
 using P3ImageManagement.Application.ViewModels;
 using P3ImageManagement.Application.Patterns.FieldPattern;
+using P3ImageManagement.Infra.Dao.Repository;
 
 namespace P3ImageManagement.Application.Services
 {
     public class SubCategoryAppService : ISubCategoryAppService
     {
         private readonly ISubCategoryRepository _subCategoryRepository;
+        private readonly IP3RouteAppService _p3RouteAppService;
         private readonly ICategoryAppService _categoryAppService;
 
-        public SubCategoryAppService(ISubCategoryRepository subCategoryRepository, ICategoryAppService categoryAppService)
+        public SubCategoryAppService(ISubCategoryRepository subCategoryRepository, ICategoryAppService categoryAppService, IP3RouteAppService p3RouteAppService)
         {
             _subCategoryRepository = subCategoryRepository;
             _categoryAppService = categoryAppService;
+            _p3RouteAppService = p3RouteAppService;
         }
 
         public void Add(SubCategoryViewModel subCategoryViewModel)
@@ -38,6 +41,10 @@ namespace P3ImageManagement.Application.Services
             _subCategoryRepository.SaveChanges();
 
             subCategoryViewModel.Id = subCategory.Id;
+
+            _p3RouteAppService.Add(new P3Route(_categoryAppService.GetById(subCategory.CategoryId).Slug + "/" + subCategory.Slug,
+                                                "App/Views/render-form.htm",
+                                                "PublicAreaController"));
         }
 
         public List<SubCategoryViewModel> GetAll()

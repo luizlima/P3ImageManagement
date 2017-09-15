@@ -47,6 +47,7 @@
     <Compile Include="Models\Checkbox.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\Field.cs" />
+    <Compile Include="Models\P3Route.cs" />
     <Compile Include="Models\Select.cs" />
     <Compile Include="Models\SubCategory.cs" />
     <Compile Include="Models\Text.cs" />

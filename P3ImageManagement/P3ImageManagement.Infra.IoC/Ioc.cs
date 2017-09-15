@@ -21,6 +21,8 @@ namespace P3ImageManagement.Infra.IoC
             container.Register<ISubCategoryRepository, SubCategoryRepository>();
             container.Register<ICategoryAppService, CategoryAppService>();
             container.Register<ISubCategoryAppService, SubCategoryAppService>();
+            container.Register(typeof(P3RouteRepository));
+            container.Register<IP3RouteAppService, P3RouteAppService>();
         }
 
         public static Ioc Instance

@@ -1,12 +1,7 @@
 ﻿'use strict'
 P3ImageApp.controller("SubCategoryController", function ($scope, $http, $window,$route) {
     $scope.fieldTypes = ['checkbox', 'select', 'text', 'textarea'];
-    //$scope.fieldTypes =[
-    //    {id:0, name: "checkbox"},
-    //    {id:1, name:"select"},
-    //    {id:2, name:"text"},
-    //    {id:3, name:"textarea"}
-    //];
+    
     $scope.fields = [];
     $scope.subCategory = {
         description: "",
@@ -24,8 +19,6 @@ P3ImageApp.controller("SubCategoryController", function ($scope, $http, $window,
         fieldType: "",
         values:""
     };
-
-    
 
     $scope.addField = function (order, description, type, values) {
         var f = {
