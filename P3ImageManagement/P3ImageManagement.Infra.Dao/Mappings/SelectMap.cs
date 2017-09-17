@@ -14,7 +14,6 @@ namespace P3ImageManagement.Infra.Dao.Mappings
         {
             Map(x => 
             {
-                //x.MapInheritedProperties();
                 x.ToTable("Select");
             });
 

@@ -13,7 +13,7 @@ namespace P3ImageManagement.Infra.Dao.Context
     {
         public P3ImageDBContext()
         {
-            Database.SetInitializer<P3ImageDBContext>(new DropCreateDatabaseAlways<P3ImageDBContext>());
+            Database.SetInitializer<P3ImageDBContext>(new CreateDatabaseIfNotExists<P3ImageDBContext>());
         }
 
         public DbSet<Category> Categories { get; set; }
