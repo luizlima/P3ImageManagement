@@ -44,7 +44,7 @@ namespace P3ImageManagement.Application.Services
 
             _p3RouteAppService.Add(new P3Route(_categoryAppService.GetById(subCategory.CategoryId).Slug + "/" + subCategory.Slug,
                                                 "App/Views/render-form.htm",
-                                                "PublicAreaController"));
+                                                ""));
         }
 
         public List<SubCategoryViewModel> GetAll()
@@ -78,6 +78,19 @@ namespace P3ImageManagement.Application.Services
 
         }
 
+        public SubCategoryViewModel GetBySlug(string slug)
+        {
+            var subCategory = _subCategoryRepository.GetBySlug(slug);
+            var subCategoryViewModel = new SubCategoryViewModel();
+            subCategoryViewModel.Id = subCategory.Id;
+            subCategoryViewModel.Description = subCategory.Description;
+            subCategoryViewModel.Slug = subCategory.Slug;
+            subCategoryViewModel.CategoryViewModel = _categoryAppService.GetById(subCategory.CategoryId);
+            subCategoryViewModel.FieldsViewModel = ConvertToViewModels(subCategory.Fields);
+
+            return subCategoryViewModel;
+        }
+
         public void Remove(int id)
         {
             var subCategory = _subCategoryRepository.GetById(id);
@@ -88,7 +101,7 @@ namespace P3ImageManagement.Application.Services
         {
             var fieldsViewModel = new List<FieldViewModel>();
             FieldViewModelCreator creator = new FieldViewModelCreator();
-            foreach (var item in fields)
+            foreach (var item in fields.OrderBy(f => f.Order))
             {
                 fieldsViewModel.Add(creator.FactoryMethod(item));
             }

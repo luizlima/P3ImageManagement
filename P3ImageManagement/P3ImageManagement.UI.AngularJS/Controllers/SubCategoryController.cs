@@ -27,11 +27,28 @@ namespace P3ImageManagement.UI.AngularJS.Controllers
             return subCategories;
         }
 
-        // GET: api/SubCategory
+        // GET: api/Category/5
+        public SubCategoryViewModel Get(int id)
+        {
+            var category = _subCategoryAppService.GetById(id);
+
+            return category;
+        }
+
+        // GET: api/subcategories/5/category
         [Route("api/subcategories/{categoryId}/category")]
         public IEnumerable<SubCategoryViewModel> GetByCategoryId(int categoryId)
         {
             var subCategories = _subCategoryAppService.GetByCategoryId(categoryId);
+
+            return subCategories;
+        }
+
+        // GET: api/SubCategory
+        [Route("api/subcategory/{slug}/slug")]
+        public SubCategoryViewModel GetBySlug(string slug)
+        {
+            var subCategories = _subCategoryAppService.GetBySlug(slug);
 
             return subCategories;
         }

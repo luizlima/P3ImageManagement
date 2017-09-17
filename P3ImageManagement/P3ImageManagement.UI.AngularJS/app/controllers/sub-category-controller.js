@@ -10,7 +10,7 @@ P3ImageApp.controller("SubCategoryController", function ($scope, $http, $window,
             id: "",
             slug:""
         },
-        fields: $scope.fields
+        fields: []
     };
 
     $scope.field = {
@@ -35,6 +35,13 @@ P3ImageApp.controller("SubCategoryController", function ($scope, $http, $window,
         $scope.field.values = "";
     };
 
+    $scope.clearForm = function () {
+        $scope.subCategory.description = '';
+        $scope.subCategory.slug = '';
+        $scope.subCategory.category = '';
+        $scope.fields = [];
+    }
+
     $scope.loadCategories = function () {
         $http({
             method: "GET",
@@ -52,6 +59,7 @@ P3ImageApp.controller("SubCategoryController", function ($scope, $http, $window,
             url: "/api/subcategory"
         }).then(function mySuccess(response) {
             $scope.subCategories = response.data;
+            $('#tableSubcategories').focus();
         }, function myError(response) {
             $scope.error = response.statusText;
         });
@@ -61,17 +69,14 @@ P3ImageApp.controller("SubCategoryController", function ($scope, $http, $window,
     $scope.loadCategories();
      
     $scope.saveSubCategory = function () {
+        $scope.subCategory.fields = $scope.fields;
         $http({
             method: "POST",
             url: "/api/subcategory",
             data: { slug: $scope.subCategory.slug, description: $scope.subCategory.description, categoryViewModel: $scope.subCategory.category, fieldsViewModel: $scope.subCategory.fields }
         }).then(function mySuccess(response) {
-            //$scope.loadSubCategories();
-            $routeProviderReference.when($scope.subCategory.category.slug + '/' + $scope.subCategory.slug, {
-                templateUrl: "App/Views/private-area.htm",
-                controller: "PrivateAreaController"
-            });
-            $route.reload();
+            $scope.loadSubCategories();
+            $scope.clearForm();
         }, function myError(response) {
             $scope.error = response.statusText;
         });

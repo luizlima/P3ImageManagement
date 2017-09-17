@@ -212,9 +212,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.module.js" />
+    <Content Include="app\controllers\area-controller.js" />
     <Content Include="app\controllers\category-controller.js" />
-    <Content Include="app\controllers\private-area.js" />
     <Content Include="app\controllers\public-area.js" />
+    <Content Include="app\controllers\render-form-controller.js" />
     <Content Include="app\controllers\sub-category-controller.js" />
     <Content Include="app\views\category\categories.htm" />
     <Content Include="app\views\private-area.htm" />

@@ -1,4 +1,4 @@
-﻿<div ng-controller="PublicAreaController">
+﻿<div ng-init="getMenu()" style="float:left">
     <div class="btn-group-vertical" role="group" aria-label="..." style="float:left" >
         <div class="btn-group" role="group" ng-repeat="c in categories">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:100%;text-align:right">
@@ -10,4 +10,7 @@
             </ul>
         </div>
     </div>
+</div>
+<div style="padding-left:10%" ng-view>
+
 </div>

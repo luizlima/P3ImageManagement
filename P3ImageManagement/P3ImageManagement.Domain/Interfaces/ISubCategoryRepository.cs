@@ -10,5 +10,6 @@ namespace P3ImageManagement.Domain.Interfaces
     public interface ISubCategoryRepository : IRepository<SubCategory>
     {
         List<SubCategory> GetByCategoryId(int categoryId);
+        SubCategory GetBySlug(string slug);
     }
 }

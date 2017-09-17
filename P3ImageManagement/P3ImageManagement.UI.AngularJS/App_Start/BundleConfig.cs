@@ -22,8 +22,9 @@ namespace P3ImageManagement.UI.AngularJS
                       "~/Scripts/angular.js",
                       "~/Scripts/angular-route.js",
                       "~/app/app.module.js",
-                      "~/app/controllers/private-area.js",
-                      "~/app/controllers/public-area.js",
+                      "~/app/controllers/area-controller.js",
+                      "~/app/controllers/render-form-controller.js",
+                      //"~/app/controllers/public-area.js",
                       "~/app/controllers/category-controller.js",
                       "~/app/controllers/sub-category-controller.js"));
 

@@ -11,6 +11,7 @@ namespace P3ImageManagement.Application.Interfaces
     {
         void Add(SubCategoryViewModel subCategoryViewModel);
         SubCategoryViewModel GetById(int id);
+        SubCategoryViewModel GetBySlug(string slug);
         List<SubCategoryViewModel> GetAll();
         List<SubCategoryViewModel> GetByCategoryId(int categoryId);
         void Remove(int id);

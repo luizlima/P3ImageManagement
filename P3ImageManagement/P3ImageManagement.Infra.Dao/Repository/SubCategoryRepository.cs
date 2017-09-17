@@ -20,5 +20,10 @@ namespace P3ImageManagement.Infra.Dao.Repository
         {
             return _context.Set<SubCategory>().Where(x => x.CategoryId == categoryId).ToList();
         }
+
+        public SubCategory GetBySlug(string slug)
+        {
+            return _context.Set<SubCategory>().SingleOrDefault(x => x.Slug == slug);
+        }
     }
 }

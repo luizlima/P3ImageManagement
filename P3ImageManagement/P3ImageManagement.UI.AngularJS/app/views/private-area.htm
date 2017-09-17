@@ -1,9 +1,9 @@
 ﻿<div  style="padding-top:20px">
     <ul id="list-itens-menu" class="nav nav-pills" style="max-width:400px">
-        <li id="item-category" class="active"><a ng-model="currentView" ng-click="clickMenuItem('category')" >Gerenciar Categoria</a></li>
-        <li id="item-sub-category"><a id="link-subcategory" ng-model="currentView" ng-click="clickMenuItem('subcategory')">Gerenciar SubCategoria</a></li>
+        <li id="item-category" class="active"><a ng-click="clickPrivateMenuItem('category')" >Gerenciar Categoria</a></li>
+        <li id="item-sub-category"><a id="link-subcategory" ng-click="clickPrivateMenuItem('subcategory')">Gerenciar SubCategoria</a></li>
     </ul>
 </div>
-<div ng-include="currentView.url" style="padding-top:20px">
+<div ng-include="currentPrivateView" style="padding-top:20px">
     
 </div>
